@@ -4,6 +4,7 @@ import {
     Card,
     CardContent,
     CardHeader,
+    Grid,
     IconButton,
     makeStyles,
     Typography,
@@ -29,6 +30,12 @@ const useStyles = makeStyles({
             return pink[500]
             
         }  
+    },
+    timeago: {
+        fontSize: '10px'
+    },
+    contact: {
+        fontSize: '12px'
     }
 })
 
@@ -42,7 +49,7 @@ function NoteCard({ note, handleDelete }) {
                 <CardHeader 
                     avatar={
                         <Avatar 
-                            src={`./avatars/${note.person}.jpeg`}
+                            src={`/avatars/${note.person}.jpeg`}
                             className={classes.avatar}>
                         </Avatar>
                     }
@@ -53,7 +60,27 @@ function NoteCard({ note, handleDelete }) {
                     }
                     title={note.title}
                     subheader={
-                        `@${note.person} ${ formatDistance(new Date(note.createdAt), new Date(), { addSuffix: true })}`
+                        // `@${note.person} ${ formatDistance(new Date(note.createdAt), new Date(), { addSuffix: true })}`
+                        <Grid container>                
+                            <Grid item>
+                                <Typography 
+                                    variant='p'
+                                    className={classes.contact}
+                                    >
+                                    @{note.person}
+                                </Typography>
+                            </Grid>
+                            <Grid item>
+                                <Typography 
+                                    variant='p'
+                                    className={classes.timeago}
+                                    >
+                                    {formatDistance(new Date(note.createdAt), new Date(), { addSuffix: true })}
+                                </Typography>
+                            </Grid>
+                        </Grid>
+
+                        
                     }
                 />
                 

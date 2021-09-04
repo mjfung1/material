@@ -2,14 +2,14 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Notes from './pages/Notes';
 import Create from './pages/Create';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
-import { blue, red } from '@material-ui/core/colors';
+import { blue, grey, red } from '@material-ui/core/colors';
 import Layout from './components/Layout';
 
 
 const theme = createTheme({
   palette: {
     primary: blue,
-    secondary: red,
+    secondary: grey,
   },
   typography: {
     fontFamily: "Kaisei Tokumin",

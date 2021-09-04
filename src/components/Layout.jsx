@@ -12,6 +12,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { format } from 'date-fns';
+import { blue } from '@material-ui/core/colors';
 
 const drawerWidth = 240;
 
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => {
             display: 'flex'
         },
         active: {
-            color: '#f4f4f4'
+            color: blue[500],
         },
         title: {
             padding: theme.spacing(2)
@@ -82,7 +83,7 @@ function Layout({ children }) {
                     
                     <Typography 
                         className={classes.date}>
-                        Today is the { format( new Date(), 'do MMMM Y') }
+                        Hey, it's { format( new Date(), 'eeee') }
                     </Typography>
                     <Typography>
                         Mose
@@ -97,13 +98,14 @@ function Layout({ children }) {
             {/* side drawer */}
             <Drawer
                 variant='permanent'
-                anchor=''
+                anchor='left'
                 className={classes.drawer}
                 classes={{ paper: classes.drawerPaper }}
             >
-                <Typography variant="h5" className={ classes.title }>
+                <Typography variant="h4" className={ classes.title }>
                     the office
                 </Typography>
+                
 
                 {/* list / links */}
                 <List>
