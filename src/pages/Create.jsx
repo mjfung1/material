@@ -12,6 +12,7 @@ import {
   FormLabel,
   FormControl
 } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 
 const useStyles = makeStyles({
@@ -25,12 +26,13 @@ const useStyles = makeStyles({
 export default function Create() {
 
   const classes = useStyles();
+  const history = useHistory();
 
   const [ title, setTitle ] = useState('');
   const [ details, setDetails ] = useState('');
   const [ titleError, setTitleError ] = useState(false);
   const [ detailsError, setDetailsError ] = useState(false);
-  const [ category, setCategory ] = useState('todos');
+  const [ person, setPerson ] = useState('todos');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,7 +45,14 @@ export default function Create() {
 
 
     if (title && details) {
-      console.log(title, details, category)
+      
+      fetch('http://localhost:8000/notes', {
+        method: 'POST',
+        headers: {"Content-type": "application/json"},
+        // json-server automatically adds id. No need to worry
+        // in body - have to JSON.stringify bc server cannot read js
+        body: JSON.stringify({ title, details, person })
+      }).then(() => history.push('/'))
     }
   };
   
@@ -57,7 +66,7 @@ export default function Create() {
         component="h2"
         gutterBottom
       >
-        Create a New Note
+        Create a New Quote
       </Typography>
       <form 
         onSubmit={handleSubmit}
@@ -67,7 +76,7 @@ export default function Create() {
           onChange={(e) => setTitle(e.target.value)}
           className={classes.btn}
           variant="outlined"
-          label="Note Title"
+          label="Quote Title"
           error={titleError}
           fullWidth
           required
@@ -86,12 +95,18 @@ export default function Create() {
         />
 
         <FormControl className={classes.btn}>
-          <FormLabel>Category</FormLabel>
-          <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)}>
-            <FormControlLabel label="Money" value="money" control={ <Radio />} />
-            <FormControlLabel label="Todos" value="todos" control={ <Radio />} />
-            <FormControlLabel label="Reminders" value="reminders" control={ <Radio />} />
-            <FormControlLabel label="Work" value="work" control={ <Radio />} />
+          <FormLabel>Name</FormLabel>
+          <RadioGroup value={person} onChange={(e) => setPerson(e.target.value)}>
+            <FormControlLabel label="Prison Mike" value="prisonMike" control={ <Radio />} />
+            <FormControlLabel label="Michael Scarn" value="michaelScarn" control={ <Radio />} />
+            <FormControlLabel label="Dwight Schrute" value="dwightSchrute" control={ <Radio />} />
+            <FormControlLabel label="Michael Scott" value="michaelScott" control={ <Radio />} />
+            <FormControlLabel label="Stanley Hudson" value="stanleyHudson" control={ <Radio />} />
+            <FormControlLabel label="Kevin Malone" value="kevinMalone" control={ <Radio />} />
+            <FormControlLabel label="Pam Beesly" value="pamBeesly" control={ <Radio />} />
+            <FormControlLabel label="Toby Flenderson" value="tobyFlenderson" control={ <Radio />} />
+            <FormControlLabel label="Angela Martin" value="angelaMartin" control={ <Radio />} />
+            <FormControlLabel label="Kelly Kapoor" value="kellyKapoor" control={ <Radio />} />
           </RadioGroup>
         </FormControl>
         
