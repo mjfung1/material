@@ -83,7 +83,7 @@ function Layout({ children }) {
                     
                     <Typography 
                         className={classes.date}>
-                        Hey, it's { format( new Date(), 'eeee') }
+                        { format( new Date(), 'eeee d') }
                     </Typography>
                     <Typography>
                         Mose
