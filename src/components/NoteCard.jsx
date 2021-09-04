@@ -16,21 +16,6 @@ import { formatDistance } from 'date-fns';
 import React from 'react';
 
 const useStyles = makeStyles({
-    avatar: {
-        backgroundColor: (note) => {
-            if (note.category === 'work') {
-                return red[700]
-            }
-            if (note.category === 'reminders') {
-                return blue[500]
-            }
-            if (note.category === 'money') {
-                return green[500]
-            }
-            return pink[500]
-            
-        }  
-    },
     timeago: {
         fontSize: '10px'
     },
@@ -50,7 +35,7 @@ function NoteCard({ note, handleDelete }) {
                     avatar={
                         <Avatar 
                             src={`./avatars/${note.person}.jpeg`}
-                            className={classes.avatar}>
+                        >
                         </Avatar>
                     }
                     action={
