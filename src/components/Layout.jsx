@@ -99,9 +99,9 @@ function Layout({ children }) {
                 variant='permanent'
                 anchor=''
                 className={classes.drawer}
-                classes={{ paper: classes.drawerPaper}}
+                classes={{ paper: classes.drawerPaper }}
             >
-                <Typography variant="h5" className={classes.title}>
+                <Typography variant="h5" className={ classes.title }>
                     the office
                 </Typography>
 
@@ -127,7 +127,7 @@ function Layout({ children }) {
 
                 </div>
 
-                {children}
+                { children }
             </div>
         </div>
     )

@@ -9,7 +9,7 @@ export default function Notes() {
   const [ notes, setNotes ] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/notes')
+    fetch('http://localhost:8000/notes?_sort=createdAt&_order=desc')
       .then(res => res.json())
       .then(data => setNotes(data))
   }, [])

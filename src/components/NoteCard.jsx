@@ -10,6 +10,7 @@ import {
  } from '@material-ui/core';
 import { blue, green, pink, red } from '@material-ui/core/colors';
 import { DeleteOutlined } from '@material-ui/icons';
+import { formatDistance } from 'date-fns';
 
 import React from 'react';
 
@@ -43,7 +44,6 @@ function NoteCard({ note, handleDelete }) {
                         <Avatar 
                             src={`./avatars/${note.person}.jpeg`}
                             className={classes.avatar}>
-                            {note.person[0].toUpperCase()}
                         </Avatar>
                     }
                     action={
@@ -52,7 +52,9 @@ function NoteCard({ note, handleDelete }) {
                         </IconButton>
                     }
                     title={note.title}
-                    subheader={note.person}
+                    subheader={
+                        `@${note.person} ${ formatDistance(new Date(note.createdAt), new Date(), { addSuffix: true })}`
+                    }
                 />
                 
                 <CardContent>

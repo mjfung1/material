@@ -33,6 +33,7 @@ export default function Create() {
   const [ titleError, setTitleError ] = useState(false);
   const [ detailsError, setDetailsError ] = useState(false);
   const [ person, setPerson ] = useState('todos');
+  const createdAt = new Date();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,7 +52,7 @@ export default function Create() {
         headers: {"Content-type": "application/json"},
         // json-server automatically adds id. No need to worry
         // in body - have to JSON.stringify bc server cannot read js
-        body: JSON.stringify({ title, details, person })
+        body: JSON.stringify({ title, details, person, createdAt })
       }).then(() => history.push('/'))
     }
   };
@@ -108,6 +109,7 @@ export default function Create() {
             <FormControlLabel label="Angela Martin" value="angelaMartin" control={ <Radio />} />
             <FormControlLabel label="Kelly Kapoor" value="kellyKapoor" control={ <Radio />} />
             <FormControlLabel label="Oscar Martinez" value="oscarMartinez" control={ <Radio />} />
+            <FormControlLabel label="Gabe" value="gabeLewis" control={ <Radio />} />
           </RadioGroup>
         </FormControl>
         
