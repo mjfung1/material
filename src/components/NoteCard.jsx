@@ -52,7 +52,7 @@ function NoteCard({ note, handleDelete }) {
                         </IconButton>
                     }
                     title={note.title}
-                    subheader={note.category}
+                    subheader={note.person}
                 />
                 
                 <CardContent>

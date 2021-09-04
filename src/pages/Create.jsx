@@ -107,6 +107,7 @@ export default function Create() {
             <FormControlLabel label="Toby Flenderson" value="tobyFlenderson" control={ <Radio />} />
             <FormControlLabel label="Angela Martin" value="angelaMartin" control={ <Radio />} />
             <FormControlLabel label="Kelly Kapoor" value="kellyKapoor" control={ <Radio />} />
+            <FormControlLabel label="Oscar Martinez" value="oscarMartinez" control={ <Radio />} />
           </RadioGroup>
         </FormControl>
         
