@@ -1,7 +1,6 @@
 {
   "name": "material-ui-tut",
   "version": "0.1.0",
-  "private": true,
   "homepage": "http://mjfung1.github.io/material/",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
