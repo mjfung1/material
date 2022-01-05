@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   }
   });
 
-export default function Create() {
+export default function Create({ database, addNote }) {
 
   const classes = useStyles();
   const history = useHistory();
@@ -45,16 +45,20 @@ export default function Create() {
     if (details === '') setDetailsError(true);
 
 
-    if (title && details) {
+    // if (title && details) {
       
-      fetch('http://localhost:8000/notes', {
-        method: 'POST',
-        headers: {"Content-type": "application/json"},
-        // json-server automatically adds id. No need to worry
-        // in body - have to JSON.stringify bc server cannot read js
-        body: JSON.stringify({ title, details, person, createdAt })
-      }).then(() => history.push('/'))
-    }
+    //   fetch('http://localhost:8000/notes', {
+    //     method: 'POST',
+    //     headers: {"Content-type": "application/json"},
+    //     // json-server automatically adds id. No need to worry
+    //     // in body - have to JSON.stringify bc server cannot read js
+    //     body: JSON.stringify({ title, details, person, createdAt })
+    //   }).then(() => history.push('/'))
+    // }
+      let id = database.length + ',' + person;
+      let data = { id, title, details, person, createdAt }
+      addNote( data );
+      history.push('/');
   };
   
   return (

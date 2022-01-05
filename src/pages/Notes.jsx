@@ -4,24 +4,24 @@ import NoteCard from '../components/NoteCard';
 import Masonry from 'react-masonry-css';
 
 
-export default function Notes() {
+export default function Notes({ handleDelete, notes }) {
 
-  const [ notes, setNotes ] = useState([]);
+  // const [ notes, setNotes ] = useState([]);
 
-  useEffect(() => {
-    fetch('http://localhost:8000/notes?_sort=createdAt&_order=desc')
-      .then(res => res.json())
-      .then(data => setNotes(data))
-  }, [])
+  // useEffect(() => {
+  //   fetch('http://localhost:8000/notes?_sort=createdAt&_order=desc')
+  //     .then(res => res.json())
+  //     .then(data => setNotes(data))
+  // }, [])
 
-  const handleDelete = async (id) => {
-    await fetch('http://localhost:8000/notes/' + id, {
-      method: 'DELETE'
-    });
+  // const handleDelete = async (id) => {
+  //   await fetch('http://localhost:8000/notes/' + id, {
+  //     method: 'DELETE'
+  //   });
 
-    const newNotes = notes.filter(note => note.id !== id);
-    setNotes(newNotes);
-  };
+  //   const newNotes = notes.filter(note => note.id !== id);
+  //   setNotes(newNotes);
+  // };
 
   const breakpointColumnsObj = {
     default: 4,
