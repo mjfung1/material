@@ -90,7 +90,7 @@ function Layout({ children }) {
                     </Typography>
                     <Avatar 
                         className={classes.avatar}
-                        src='../components/assets/avatars/mose.jpeg'/>
+                        src='../assets/avatars/mose.jpeg'/>
                 </Toolbar>
             </AppBar>
 
