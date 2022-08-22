@@ -6,6 +6,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import React from 'react';
 
+
+
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons';
 import { useHistory, useLocation } from 'react-router-dom';
 
@@ -72,6 +74,7 @@ function Layout({ children }) {
 
     ]
 
+
     return (
         <div className={classes.root}>
             {/* app bar */}
@@ -90,7 +93,7 @@ function Layout({ children }) {
                     </Typography>
                     <Avatar 
                         className={classes.avatar}
-                        src='../assets/avatars/mose.jpeg'/>
+                        src='./avatars/mose.jpeg'/>
                 </Toolbar>
             </AppBar>
 

@@ -34,7 +34,7 @@ function NoteCard({ note, handleDelete }) {
                 <CardHeader 
                     avatar={
                         <Avatar 
-                            src={`../components/assets/avatars/${note.person}.jpeg`}
+                            src={`./avatars/${note.person}.jpeg`}
                         />
                         
                     }
@@ -49,7 +49,7 @@ function NoteCard({ note, handleDelete }) {
                         <Grid container>                
                             <Grid item>
                                 <Typography 
-                                    variant='p'
+                                    variant='body2'
                                     className={classes.contact}
                                     >
                                     @{note.person}
@@ -57,7 +57,7 @@ function NoteCard({ note, handleDelete }) {
                             </Grid>
                             <Grid item>
                                 <Typography 
-                                    variant='p'
+                                    variant='body2'
                                     className={classes.timeago}
                                     >
                                     {formatDistance(new Date(note.createdAt), new Date(), { addSuffix: true })}
