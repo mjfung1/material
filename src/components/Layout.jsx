@@ -16,7 +16,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { format } from 'date-fns';
 import { blue } from '@material-ui/core/colors';
 
-// import mose from '/avatars/mose.jpeg';
+// import mose from './avatars/mose.jpeg';
 
 const drawerWidth = 240;
 
