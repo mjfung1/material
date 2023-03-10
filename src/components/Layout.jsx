@@ -103,7 +103,7 @@ function Layout({ children }) {
             <Typography>Mose</Typography>
             <Avatar
               className={classes.avatar}
-              src={process.env.PUBLIC_URL + "/avatars/toilet32x32.png"}
+              src={"/avatars/toilet32x32.png"}
             />
             {/* <Avatar 
                         className={classes.avatar}
