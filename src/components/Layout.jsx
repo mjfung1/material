@@ -16,7 +16,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { format } from 'date-fns';
 import { blue } from '@material-ui/core/colors';
 
-// import mose from './avatars/mose.jpeg';
+// import mose from '../../public/avatars/mose.jpeg';
 
 const drawerWidth = 240;
 
@@ -92,69 +92,61 @@ function Layout({ children }) {
 
 
     return (
-        <div className={classes.root}>
-            {/* app bar */}
+      <div className={classes.root}>
+        {/* app bar */}
 
-            <AppBar 
-                elevation={0}
-                className={classes.appbar}>
-                <Toolbar>
-                    
-                    <Typography 
-                        className={classes.date}>
-                        { format( new Date(), 'eeee d') }
-                    </Typography>
-                    <Typography>
-                        Mose
-                    </Typography>
-                    <Avatar 
-                        className={classes.avatar}
-                        src="./avatars/mose.jpeg" />
-                                            {/* <Avatar 
+        <AppBar elevation={0} className={classes.appbar}>
+          <Toolbar>
+            <Typography className={classes.date}>
+              {format(new Date(), "eeee d")}
+            </Typography>
+            <Typography>Mose</Typography>
+            <Avatar
+              className={classes.avatar}
+              src={process.env.PUBLIC_URL + "/avatars/toilet32x32.png"}
+            />
+            {/* <Avatar 
                         className={classes.avatar}
                         src={mose} /> */}
-                </Toolbar>
-            </AppBar>
+          </Toolbar>
+        </AppBar>
 
+        {/* side drawer */}
+        <Drawer
+          variant="permanent"
+          anchor="left"
+          className={classes.drawer}
+          classes={{ paper: classes.drawerPaper }}
+        >
+          <Typography variant="h4" className={classes.title}>
+            the office
+          </Typography>
 
-            {/* side drawer */}
-            <Drawer
-                variant='permanent'
-                anchor='left'
-                className={classes.drawer}
-                classes={{ paper: classes.drawerPaper }}
-            >
-                <Typography variant="h4" className={ classes.title }>
-                    the office
-                </Typography>
-                
+          {/* list / links */}
+          <List>
+            {menuItems.map((note) => (
+              <ListItem
+                onClick={() => history.push(note.path)}
+                button
+                key={note.text}
+                className={
+                  location.pathname === note.path ? classes.active : null
+                }
+              >
+                <ListItemIcon>{note.icon}</ListItemIcon>
+                <ListItemText primary={note.text} />
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
 
-                {/* list / links */}
-                <List>
-                    {menuItems.map((note) => (
-                        <ListItem 
-                            onClick={() => history.push(note.path)}
-                            button 
-                            key={note.text}
-                            className={location.pathname === note.path ? classes.active : null}
-                            >
-                            <ListItemIcon>{note.icon}</ListItemIcon>
-                            <ListItemText primary={note.text} />
-                        </ListItem>
-                    ))}
-                </List>
-            </Drawer>
+        <div className={classes.page}>
+          <div className={classes.toolbar}></div>
 
-
-            <div className={classes.page}>
-                <div className={classes.toolbar}>
-
-                </div>
-
-                { children }
-            </div>
+          {children}
         </div>
-    )
+      </div>
+    );
 }
 
 export default Layout;
