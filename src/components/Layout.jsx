@@ -8,7 +8,7 @@ import React from 'react';
 
 
 
-import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons';
+import { AddCircleOutlineOutlined, SubjectOutlined, GitHub, LinkedIn } from '@material-ui/icons';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -63,18 +63,32 @@ function Layout({ children }) {
     const location = useLocation();
 
     const menuItems = [
-        {
-            text: 'Fave Quotes',
-            icon: <SubjectOutlined color="secondary"/>,
-            path: '/'
-        },
-        {
-            text: 'Add Fave Quote',
-            icon: <AddCircleOutlineOutlined color="secondary"/>,
-            path: '/create'
-        }
-
-    ]
+      {
+        text: "Fave Quotes",
+        icon: <SubjectOutlined color="secondary" />,
+        path: "/",
+      },
+      {
+        text: "Add Fave Quote",
+        icon: <AddCircleOutlineOutlined color="secondary" />,
+        path: "/create",
+      },
+      {
+        text: "Github",
+        icon: <GitHub color="secondary" />,
+        path: "https://github.com/mjfung1",
+      },
+      {
+        text: "LinkedIn",
+        icon: <LinkedIn color="secondary" />,
+        path: "https://www.linkedin.com/in/miguel-fung-5084691b5/",
+      },
+      {
+        text: "Portfolio",
+        icon: <AddCircleOutlineOutlined color="secondary" />,
+        path: "https://mjfung1.github.io/",
+      },
+    ];
 
 
     return (
