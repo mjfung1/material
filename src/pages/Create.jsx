@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     marginTop: 20,
     marginBottom: 20,
     display: "block",
-    
+
   },
   button: {
     backgroundColor: "#3dace3",
@@ -32,6 +32,7 @@ const useStyles = makeStyles({
   },
   container: {
     maxWidth: "900px",
+    height: "100vh"
   },
   radioHover: {
     marginLeft: '1px',
