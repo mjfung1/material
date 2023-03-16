@@ -126,14 +126,15 @@ function App() {
 
     // if (!localStorage.getItem('the-office')) {
     //   localStorage.setItem('the-office', JSON.stringify(database));
-    //   setNotes(database);
+    //   setNotes(database)
 
     // } else {
     //   const savedData = localStorage.getItem('the-office');
     //   setNotes(JSON.parse(savedData));
     // }
 
-    setNotes(database);
+    //fdasdasf
+    setNotes(database)
 
   }, [])
 
