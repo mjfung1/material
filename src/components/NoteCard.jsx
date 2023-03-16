@@ -9,24 +9,11 @@ import {
     makeStyles,
     Typography,
  } from '@material-ui/core';
-import { blue, green, pink, red } from '@material-ui/core/colors';
 import { DeleteOutlined } from '@material-ui/icons';
 import { formatDistance } from 'date-fns';
 
 import React from 'react';
-import mose from "../avatars/mose.jpeg";
-import angelaMartin from "../avatars/angelaMartin.jpeg";
-import dwightSchrute from "../avatars/dwightSchrute.jpeg";
-import gabeLewis from "../avatars/gabeLewis.jpeg";
-import kellyKapoor from "../avatars/kellyKapoor.jpeg";
-import kevinMalone from "../avatars/kevinMalone.jpeg";
-import michaelScarn from "../avatars/michaelScarn.jpeg";
-import michaelScott from "../avatars/michaelScott.jpeg";
-import oscarMartinez from "../avatars/oscarMartinez.jpeg";
-import pamBeesly from "../avatars/pamBeesly.jpeg";
-import prisonMike from "../avatars/prisonMike.jpeg";
-import stanleyHudson from "../avatars/stanleyHudson.jpeg";
-import tobyFlenderson from "../avatars/tobyFlenderson.jpeg";
+
 
 
 const useStyles = makeStyles({
@@ -48,10 +35,6 @@ function NoteCard({ note, handleDelete }) {
           <CardHeader
             avatar={
               <Avatar src={`../the-office/avatars/${note.person}.jpeg`} />
-              // <Avatar
-              //   className={classes.avatar}
-              //   src={'../avatars/michaelScott.jpeg'}
-              // />
             }
             action={
               <IconButton onClick={() => handleDelete(note.id)}>
