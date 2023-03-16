@@ -52,7 +52,7 @@ function NoteCard({ note, handleDelete }) {
               // />
               <Avatar
                 className={classes.avatar}
-                src={prisonMike}
+                src={'../avatars/michaelScott.jpeg'}
               />
             }
             action={
