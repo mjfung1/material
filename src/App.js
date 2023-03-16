@@ -132,7 +132,7 @@ function App() {
   };
 
   const addNote = (note) => {
-    setNotes([ ...notes, note ]);
+    setNotes([ note, ...notes ]);
   };
 
 

@@ -22,37 +22,48 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => {
     return {
-        page: {
-        background: '#f9f9f9',
-        width: '100%',
-        padding: theme.spacing(3)
-        }, 
-        drawer: {
-            width: drawerWidth
+      page: {
+        background: "#f9f9f9",
+        width: "100%",
+        padding: theme.spacing(3),
+
+      },
+      drawer: {
+        width: drawerWidth,
+      },
+      drawerPaper: {
+        width: drawerWidth,
+      },
+      root: {
+        display: "flex",
+      },
+      active: {
+        color: "#3dace3",
+      },
+      title: {
+        padding: theme.spacing(2),
+      },
+      appbar: {
+        width: `calc(100% - ${drawerWidth}px)`,
+        backgroundColor: "#3dace3",
+      },
+      toolbar: theme.mixins.toolbar,
+      date: {
+        flexGrow: 1,
+      },
+      avatar: {
+        marginLeft: theme.spacing(2),
+      },
+      personalLinks: {
+        margin: "0 12px",
+        color: "white",
+        transition: "all 0.35s ease-in-out",
+        "&:hover": {
+          color: "grey",
         },
-        drawerPaper: {
-            width: drawerWidth
-        },
-        root : {
-            display: 'flex'
-        },
-        active: {
-            color: blue[500],
-        },
-        title: {
-            padding: theme.spacing(2)
-        },
-        appbar: {
-            width: `calc(100% - ${drawerWidth}px)`
-        },
-        toolbar: theme.mixins.toolbar,
-        date: {
-            flexGrow: 1
-        },
-        avatar: {
-            marginLeft: theme.spacing(2)
-        }
-    }
+      },
+     
+    };
     
 });
 
@@ -69,7 +80,7 @@ function Layout({ children }) {
         path: "/",
       },
       {
-        text: "Add Fave Quote",
+        text: "Add Quote",
         icon: <AddCircleOutlineOutlined color="secondary" />,
         path: "/create",
       }
@@ -87,15 +98,30 @@ function Layout({ children }) {
             </Typography>
 
             <div className={classes.date}>
-              <Link to="https://github.com/mjfung1/material">
+              <a
+                href="https://github.com/mjfung1/material"
+                target="_blank"
+                rel="noreferrer"
+                className={classes.personalLinks}
+              >
                 <GitHub />
-              </Link>
-              <Link to="https://www.linkedin.com/in/miguel-fung-5084691b5/">
+              </a>
+              <a
+                href="https://www.linkedin.com/in/miguel-fung-5084691b5/"
+                target="_blank"
+                rel="noreferrer"
+                className={classes.personalLinks}
+              >
                 <LinkedIn />
-              </Link>
-              <Link to="https://mjfung1.github.io/">
+              </a>
+              <a
+                href="https://mjfung1.github.io/"
+                target="_blank"
+                rel="noreferrer"
+                className={classes.personalLinks}
+              >
                 <WorkOutline />
-              </Link>
+              </a>
             </div>
 
             <Typography>Mose</Typography>
@@ -126,7 +152,7 @@ function Layout({ children }) {
                 }
               >
                 <ListItemIcon>{note.icon}</ListItemIcon>
-                <ListItemText primary={note.text} />
+                <ListItemText primary={note.text}/>
               </ListItem>
             ))}
           </List>
