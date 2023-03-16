@@ -16,7 +16,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { format } from 'date-fns';
 import { blue } from '@material-ui/core/colors';
 
-// import mose from '../../public/avatars/mose.jpeg';
+import mose from '../avatars/mose.jpeg';
 
 const drawerWidth = 240;
 
@@ -101,13 +101,10 @@ function Layout({ children }) {
               {format(new Date(), "eeee d")}
             </Typography>
             <Typography>Mose</Typography>
-            <Avatar
-              className={classes.avatar}
-              src={"/avatars/toilet32x32.png"}
-            />
-            {/* <Avatar 
+         
+            <Avatar 
                         className={classes.avatar}
-                        src={mose} /> */}
+                        src={mose} />
           </Toolbar>
         </AppBar>
 
