@@ -13,7 +13,7 @@ const theme = createTheme({
     secondary: grey,
   },
   typography: {
-    fontFamily: "Kaisei Tokumin",
+    fontFamily: "Roboto",
     fontWeightLight: 400,
     fontWeightRegular: 500,
     fontWeightMedium: 700,
@@ -123,16 +123,29 @@ function App() {
   const [ notes, setNotes ] = useState([]);
 
   useEffect(() => {
-    setNotes(database)
+
+    if (!localStorage.getItem('the-office')) {
+      localStorage.setItem('the-office', JSON.stringify(database));
+      setNotes(database)
+
+    } else {
+      const savedData = localStorage.getItem('the-office');
+      // console.log(typeof savedData, savedData);
+      setNotes(JSON.parse(savedData));
+    }
+
   }, [])
 
   const handleDelete = (id) => {
     const newNotes = notes.filter(note => note.id !== id);
+    localStorage.setItem('the-office', JSON.stringify(newNotes));
     setNotes(newNotes);
   };
 
   const addNote = (note) => {
-    setNotes([ note, ...notes ]);
+    const newNotes = [note, ...notes]
+    localStorage.setItem('the-office', JSON.stringify(newNotes));
+    setNotes(newNotes);
   };
 
 

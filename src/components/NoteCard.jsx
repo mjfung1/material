@@ -17,18 +17,24 @@ import React from 'react';
 
 
 const useStyles = makeStyles({
-    timeago: {
-        fontSize: '10px'
+  timeago: {
+    fontSize: "10px",
+  },
+  contact: {
+    fontSize: "12px",
+  },
+  buttonHover: {
+    transition: 'all 0.35s ease-in-out',
+    "&:hover": {
+      color: "red",
     },
-    contact: {
-        fontSize: '12px'
-    }
-})
+  },
+});
 
 function NoteCard({ note, handleDelete }) {
 
     const classes = useStyles(note);
-    console.log(note.person);
+   
     return (
       <div>
         <Card elevation={1}>
@@ -37,7 +43,7 @@ function NoteCard({ note, handleDelete }) {
               <Avatar src={`../the-office/avatars/${note.person}.jpeg`} />
             }
             action={
-              <IconButton onClick={() => handleDelete(note.id)}>
+              <IconButton onClick={() => handleDelete(note.id)} className={classes.buttonHover}>
                 <DeleteOutlined />
               </IconButton>
             }

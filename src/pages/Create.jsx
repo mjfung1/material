@@ -19,9 +19,28 @@ const useStyles = makeStyles({
   btn: {
     marginTop: 20,
     marginBottom: 20,
-    display: 'block'
-  }
-  });
+    display: "block",
+    
+  },
+  button: {
+    backgroundColor: "#3dace3",
+    color: "white",
+    transition: "all 0.35s ease-in-out",
+    "&:hover": {
+      backgroundColor: "grey",
+    },
+  },
+  container: {
+    maxWidth: "900px",
+  },
+  radioHover: {
+    marginLeft: '1px',
+    transition: "all 0.35s ease-in-out",
+    "&:hover": {
+      color: "#3dace3",
+    },
+  },
+});
 
 export default function Create({ database, addNote }) {
 
@@ -62,9 +81,7 @@ export default function Create({ database, addNote }) {
   };
   
   return (
-
-    <Container>
-
+    <Container className={classes.container}>
       <Typography
         variant="h6"
         color="textSecondary"
@@ -73,11 +90,8 @@ export default function Create({ database, addNote }) {
       >
         Create a New Quote
       </Typography>
-      <form 
-        onSubmit={handleSubmit}
-        autoComplete="off" 
-        noValidate>
-        <TextField 
+      <form onSubmit={handleSubmit} autoComplete="off" noValidate>
+        <TextField
           onChange={(e) => setTitle(e.target.value)}
           className={classes.btn}
           variant="outlined"
@@ -87,7 +101,7 @@ export default function Create({ database, addNote }) {
           required
         />
 
-        <TextField 
+        <TextField
           onChange={(e) => setDetails(e.target.value)}
           className={classes.btn}
           variant="outlined"
@@ -101,36 +115,95 @@ export default function Create({ database, addNote }) {
 
         <FormControl className={classes.btn}>
           <FormLabel>Name</FormLabel>
-          <RadioGroup value={person} onChange={(e) => setPerson(e.target.value)}>
-            <FormControlLabel label="Prison Mike" value="prisonMike" control={ <Radio />} />
-            <FormControlLabel label="Michael Scarn" value="michaelScarn" control={ <Radio />} />
-            <FormControlLabel label="Dwight Schrute" value="dwightSchrute" control={ <Radio />} />
-            <FormControlLabel label="Michael Scott" value="michaelScott" control={ <Radio />} />
-            <FormControlLabel label="Stanley Hudson" value="stanleyHudson" control={ <Radio />} />
-            <FormControlLabel label="Kevin Malone" value="kevinMalone" control={ <Radio />} />
-            <FormControlLabel label="Pam Beesly" value="pamBeesly" control={ <Radio />} />
-            <FormControlLabel label="Toby Flenderson" value="tobyFlenderson" control={ <Radio />} />
-            <FormControlLabel label="Angela Martin" value="angelaMartin" control={ <Radio />} />
-            <FormControlLabel label="Kelly Kapoor" value="kellyKapoor" control={ <Radio />} />
-            <FormControlLabel label="Oscar Martinez" value="oscarMartinez" control={ <Radio />} />
-            <FormControlLabel label="Gabe" value="gabeLewis" control={ <Radio />} />
+          <RadioGroup
+            row
+            value={person}
+            onChange={(e) => setPerson(e.target.value)}
+          >
+            <FormControlLabel
+              label="Prison Mike"
+              className={classes.radioHover}
+              value="prisonMike"
+              control={<Radio className={classes.radioHover} />}
+            />
+            <FormControlLabel
+              label="Michael Scarn"
+              className={classes.radioHover}
+              value="michaelScarn"
+              control={<Radio className={classes.radioHover} />}
+            />
+            <FormControlLabel
+              label="Dwight Schrute"
+              className={classes.radioHover}
+              value="dwightSchrute"
+              control={<Radio className={classes.radioHover} />}
+            />
+            <FormControlLabel
+              label="Michael Scott"
+              className={classes.radioHover}
+              value="michaelScott"
+              control={<Radio className={classes.radioHover} />}
+            />
+            <FormControlLabel
+              label="Stanley Hudson"
+              className={classes.radioHover}
+              value="stanleyHudson"
+              control={<Radio className={classes.radioHover} />}
+            />
+            <FormControlLabel
+              label="Kevin Malone"
+              className={classes.radioHover}
+              value="kevinMalone"
+              control={<Radio className={classes.radioHover} />}
+            />
+            <FormControlLabel
+              label="Pam Beesly"
+              className={classes.radioHover}
+              value="pamBeesly"
+              control={<Radio className={classes.radioHover} />}
+            />
+            <FormControlLabel
+              label="Toby Flenderson"
+              className={classes.radioHover}
+              value="tobyFlenderson"
+              control={<Radio className={classes.radioHover} />}
+            />
+            <FormControlLabel
+              label="Angela Martin"
+              className={classes.radioHover}
+              value="angelaMartin"
+              control={<Radio className={classes.radioHover} />}
+            />
+            <FormControlLabel
+              label="Kelly Kapoor"
+              className={classes.radioHover}
+              value="kellyKapoor"
+              control={<Radio className={classes.radioHover} />}
+            />
+            <FormControlLabel
+              label="Oscar Martinez"
+              className={classes.radioHover}
+              value="oscarMartinez"
+              control={<Radio className={classes.radioHover} />}
+            />
+            <FormControlLabel
+              label="Gabe"
+              className={classes.radioHover}
+              value="gabeLewis"
+              control={<Radio className={classes.radioHover} />}
+            />
           </RadioGroup>
         </FormControl>
-        
 
-        <Button 
+        <Button
           variant="contained"
-          color="secondary"
+          className={classes.button}
           type="submit"
           endIcon={<KeyboardArrowRightOutlinedIcon />}
         >
-        Submit
-      </Button>
-        
+          Submit
+        </Button>
       </form>
-
-
     </Container>
-
-  )
+  );
 }
