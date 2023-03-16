@@ -8,13 +8,13 @@ import React from 'react';
 
 
 
-import { AddCircleOutlineOutlined, SubjectOutlined, GitHub, LinkedIn } from '@material-ui/icons';
-import { useHistory, useLocation } from 'react-router-dom';
+import { AddCircleOutlineOutlined, SubjectOutlined, GitHub, LinkedIn, WorkOutline } from '@material-ui/icons';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { format } from 'date-fns';
-import { blue } from '@material-ui/core/colors';
+import { blue, red } from '@material-ui/core/colors';
 
 import mose from '../avatars/mose.jpeg';
 
@@ -85,11 +85,21 @@ function Layout({ children }) {
             <Typography className={classes.date}>
               {format(new Date(), "eeee d")}
             </Typography>
+
+            <div className={classes.date}>
+              <Link to="https://github.com/mjfung1/material">
+                <GitHub />
+              </Link>
+              <Link to="https://www.linkedin.com/in/miguel-fung-5084691b5/">
+                <LinkedIn />
+              </Link>
+              <Link to="https://mjfung1.github.io/">
+                <WorkOutline />
+              </Link>
+            </div>
+
             <Typography>Mose</Typography>
-         
-            <Avatar 
-                        className={classes.avatar}
-                        src={mose} />
+            <Avatar className={classes.avatar} src={mose} />
           </Toolbar>
         </AppBar>
 
