@@ -72,22 +72,7 @@ function Layout({ children }) {
         text: "Add Fave Quote",
         icon: <AddCircleOutlineOutlined color="secondary" />,
         path: "/create",
-      },
-      {
-        text: "Github",
-        icon: <GitHub color="secondary" />,
-        path: "https://github.com/mjfung1",
-      },
-      {
-        text: "LinkedIn",
-        icon: <LinkedIn color="secondary" />,
-        path: "https://www.linkedin.com/in/miguel-fung-5084691b5/",
-      },
-      {
-        text: "Portfolio",
-        icon: <AddCircleOutlineOutlined color="secondary" />,
-        path: "https://mjfung1.github.io/",
-      },
+      }
     ];
 
 
