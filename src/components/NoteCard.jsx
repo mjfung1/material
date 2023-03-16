@@ -47,13 +47,13 @@ function NoteCard({ note, handleDelete }) {
         <Card elevation={1}>
           <CardHeader
             avatar={
-              // <Avatar
-              //     src={`../avatars/${note.person}.jpeg`}
-              // />
               <Avatar
-                className={classes.avatar}
-                src={'../avatars/michaelScott.jpeg'}
+                  src={`../avatars/${note.person}.jpeg`}
               />
+              // <Avatar
+              //   className={classes.avatar}
+              //   src={'../avatars/michaelScott.jpeg'}
+              // />
             }
             action={
               <IconButton onClick={() => handleDelete(note.id)}>
